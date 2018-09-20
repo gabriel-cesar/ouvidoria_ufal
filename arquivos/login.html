@@ -1,6 +1,7 @@
 <html lang = "pt-br">
 <head>
   <meta charset = "utf-8">
+  <link rel="stylesheet" type="text/css" href="css/estilos_login.css">
   <title>Login</title>
   <script>
     function digito_2(cpf_user_int, aux, cont, resultado) {
@@ -43,7 +44,7 @@
           if(11 - (digito_ver_2 % 11) > 9) {
             if(cpf_user_int % 10 == 0) {
               // vai pra proxima pagina
-              window.open("");
+              window.open("reclamacao.html");
             }
             else {
               // errou o segundo digito verificador
@@ -53,7 +54,7 @@
           else {
             if(11 - (digito_ver_2 % 11) == cpf_user_int % 10) {
               // vai pra proxima pagina
-              window.open("");
+              window.open("reclamacao.html");
             }
             else {
               // errou o segundo digito verificador
@@ -71,7 +72,7 @@
           if(11 - (digito_ver_2 % 11) > 9) {
             if(cpf_user_int % 10 == 0) {
               // vai pra proxima pagina
-              window.open("");
+              window.open("reclamacao.html");
             }
             else {
               // errou o segundo digito verificador
@@ -81,7 +82,7 @@
           else {
             if(11 - (digito_ver_2 % 11) == cpf_user_int % 10) {
               // vai pra proxima pagina
-              window.open("");
+              window.open("reclamacao.html");
             }
             else {
               // errou o segundo digito verificador
@@ -113,25 +114,39 @@
   </script>
 <head>
 <body>
-  <h1>Site de reclamações da UFAL<h1><p>
-  <forms name = "primeiro">
-    <h3>Usuário</h3><p>
-    Nome Completo:<br>
-    <input type = "text" id = "nome_usuario" required><p>
-    Matrícula:<br>
-    <input type = "text" id = "matricula" maxlength="8" required><p>
-    Digite seu CPF:<br>
-    <input type = "text" id = "cpf" maxlength="11" required><br>
-    <input type = "submit" value = "Login" onclick = "user()"><p>
-  </forms>
-  <hr>
-  <forms name = "segundo">
-    <h3>Administrador</h3><p>
-    Login:<br>
-    <input type = "text" id = "login_admin" required><p>
-    Senha:<br>
-    <input type = "password" id = "senha_admin" required><br>
-    <input type = "submit" value = "Login" onclick = "admin()"><p>
-  </forms>
+  <header>
+    <img src="css/imagens/Brasao_Ufal.png" width="90" height="90">
+    <h1>Site de reclamações da UFAL<h1><p>
+  </header>
+
+  <div id="usuario">
+    <forms name = "primeiro">
+      <h3>Usuário</h3><p>
+      Nome Completo:<br>
+      <input type = "text" id = "nome_usuario" required><p>
+      
+      Matrícula:<br>
+      <input type = "text" id = "matricula" maxlength="8" required><p>
+      
+      Digite seu CPF:<br>
+      <input type = "text" id = "cpf" maxlength="11" required><br>
+      
+      <input type = "submit" value = "Login" onclick = "user()"><p>
+    </forms>
+    <!-- <hr> -->
+  </div>
+
+  <div id="administrador">
+    <forms name = "segundo">
+      <h3>Administrador</h3><p>
+      Login:<br>
+      <input type = "text" id = "login_admin" required><p>
+      
+      Senha:<br>
+      <input type = "password" id = "senha_admin" required><br>
+      
+      <input type = "submit" value = "Login" onclick = "admin()"><p>
+    </forms>
+  </div>
 </body>
 </html>
