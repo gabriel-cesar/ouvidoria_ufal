@@ -5,17 +5,18 @@ html {
 }
 
 header {
-	border:1px solid #999;
-	border-radius:3px;
+	width: 101%;
+	height: 13%;
+	/*border:1px solid #999;*/
+	/*border-radius:3px;*/
 	background:linear-gradient(top, #F33, #933 );
 	background:-webkit-linear-gradient(top, #F33, #933 );
 	background:-moz-linear-gradient(top, #F33, #933 );
-	width: 100%;
-	height: 10%;
 }
 
-h1 {
-	background-color: : blue;
+img {
+	float: left;
+	margin: 5px;
 }
 
 #usuario {
@@ -47,7 +48,6 @@ h1{
 	color: white;
 	font-size:30px;
 	letter-spacing:-0.05em;
-	margin:2px 0 15px;
 	text-shadow:1px 1px 2px #666;
 }
 
