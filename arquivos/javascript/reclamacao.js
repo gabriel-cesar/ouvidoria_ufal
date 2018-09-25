@@ -7,7 +7,6 @@ var dados = readFile(cpf);
 
 var nome = dados.nome;
 var matricula = dados.matricula;
-
 console.log(nome, matricula, cpf);
 
 function criar_reclamacao(tipo, bloco, texto){

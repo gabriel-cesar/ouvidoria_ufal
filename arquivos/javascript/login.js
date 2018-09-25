@@ -6,6 +6,12 @@ function abrir_reclamacao(cpf_user, matricula_user, nome_user){
     window.open(`reclamacao.html?cpf=${cpf_user}`, "_self");
 }
 
+function abrir_admin(cpf_user, matricula_user, nome_user){
+
+
+    window.open(`admin.html?cpf=${cpf_user}`, "_self"); 
+}
+
  function digito_2(cpf_user_int, aux, cont, resultado) {
         // essa funcao calcula o segundo digito verificador
         if(aux == 10) {
@@ -112,6 +118,6 @@ function abrir_reclamacao(cpf_user, matricula_user, nome_user){
       }
       else {
         // vai pra proxima pagina
-        //abrir_reclamacao(cpf_user, matricula_user, nome_user);
+        abrir_admin();
       }
     }
