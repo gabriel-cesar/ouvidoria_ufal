@@ -3,26 +3,29 @@
     <head>
     <meta charset="utf-8">
     <script>
-      var openFile = function(event) {
-        var input = event.target;
-        var reader = new FileReader();
-        
-        reader.onload = function(){
-          var text = reader.result;
-          var node = document.getElementById('output');
-          node.innerText = text;
-          console.log(reader.result.substring(0, 200));
-        };
-        reader.readAsText(input.files[0]);
-      };
+
+        function writeFile(){
+            var content = [{login: "Gabriel", CPF: "10608541478"}]
+            
+            window.localStorage.setItem("key", JSON.stringify(content));
+        }
+
+        function readFile(){
+            var entrada = window.localStorage.getItem("key");
+            var content = JSON.parse(entrada);
+
+            console.log(entrada);
+
+            return content;
+        }
     </script>
 </head>
 <body>
-	<!-- <input type='file' accept='text/plain' onchange='openFile(event)'><br> -->
-	<!-- <div id='output'></div> -->
 
+  <div id="myDiv"><h2>Here is the content read from XML File</h2></div>
 
+  <input type='button' onclick='writeFile()' value='Escrever Arquivo'/>
+  <input type='button' onclick='readFile()' value='aqui'/>
 
-	<input type="button" name="botao" value="Enviar" onclick="openFile(reclamacoes.json)">
 </body>
 </html>

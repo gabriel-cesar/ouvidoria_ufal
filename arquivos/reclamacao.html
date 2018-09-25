@@ -5,6 +5,9 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/estilos_reclamacao.css">
 
+	<script type="text/javascript" src="javascript/banco_de_dados.js"></script>
+	<script type="text/javascript" src="javascript/reclamacao.js"></script>
+
 	<form>
 		<p><label for='cBloco'>Selecione o bloco que você deseja fazer a reclamação:<br></label>
 			<select name='tBloco' id='cBloco'>
@@ -57,8 +60,7 @@
 	<p><label for='cReclamacao'><BR>Insira sua reclamação:</label><br>
 	<textarea name='reclamacao' id='cReclamacao' cols='80' rows='7' maxlength='500' placeholder='máx de 500 caracteres'></textarea></p>
 	
-	
-	<input type='button' name='botao' value='Enviar reclamação' onClick=''>
+	<input type='button' name='botao' value='Enviar reclamação' onClick='criar_reclamacao("cTipo", "cBloco", "cReclamacao")'>
 	
 	</form>
 

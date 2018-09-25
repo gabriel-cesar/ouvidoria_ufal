@@ -1,152 +1,47 @@
 <html lang = "pt-br">
 <head>
-  <meta charset = "utf-8">
-  <link rel="stylesheet" type="text/css" href="css/estilos_login.css">
-  <title>Ouvidoria UFAL</title>
-  <script>
-    function digito_2(cpf_user_int, aux, cont, resultado) {
-        // essa funcao calcula o segundo digito verificador
-        if(aux == 10) {
-          return resultado;
-        }
-        else {
-          resultado += (cpf_user_int % 10) * cont;
-          return digito_2(Math.trunc(cpf_user_int / 10), aux + 1, cont + 1, resultado);
-        }
-      }
-    function digito_1(cpf_user_int, aux, cont, resultado) {
-        // essa funcao calcula o primeiro digito verificador
-        if(aux == 9) {
-            return resultado;
-        }
-        else {
-            resultado += (cpf_user_int % 10) * cont;
-            return digito_1(Math.trunc(cpf_user_int / 10), aux + 1, cont + 1, resultado);
-        }
-      }
+    <meta charset = "utf-8">
+    <link rel="stylesheet" type="text/css" href="css/estilos_login.css">
+    <title>Ouvidoria UFAL</title>
 
-    function user() {
-      // declaracao das variaveis que peguei no formulario do usuario
-      var nome_user = document.getElementById("nome_usuario").value;
-      var matricula_user = document.getElementById("matricula").value;
-      var cpf_user = document.getElementById("cpf").value;
+    <script type="text/javascript" src="javascript/banco_de_dados.js"></script>
+    <script type="text/javascript" src="javascript/login.js"></script>
 
-      // aqui eu transformo os dados que peguei no campo do cpf em inteiro
-      var cpf_user_int = parseInt(cpf_user);
-
-      // aqui eu declaro as duas variaveis que estão relacionadas ao digito verificador um e digito verificador dois, que são calculados nas funcoes digito_1 e digito_2
-      var digito_ver_1 = parseInt(digito_1(Math.trunc(cpf_user_int / 100), 0, 2, 0));
-      var digito_ver_2 = parseInt(digito_2(Math.trunc(cpf_user_int / 10), 0, 2, 0))
-
-      // as condicoes abaixo verificam se o digito verificador 1 e 2 calculados nas funcoes correspondem ao que o usuario digitou
-      if(11 - (digito_ver_1 % 11) > 9) {
-        if(Math.trunc(cpf_user_int / 10) % 10 == 0) {
-          if(11 - (digito_ver_2 % 11) > 9) {
-            if(cpf_user_int % 10 == 0) {
-              // vai pra proxima pagina
-              window.open("reclamacao.html");
-            }
-            else {
-              // errou o segundo digito verificador
-              alert("Cpf errado.");
-            }
-          }
-          else {
-            if(11 - (digito_ver_2 % 11) == cpf_user_int % 10) {
-              // vai pra proxima pagina
-              window.open("reclamacao.html");
-            }
-            else {
-              // errou o segundo digito verificador
-              alert("Cpf errado.");
-            }
-          }
-        }
-        else {
-          // errou o primeiro digito verificador
-          alert("Cpf errado.");
-        }
-      }
-      else {
-        if(11 - (digito_ver_1 % 11) == Math.trunc(cpf_user_int / 10) % 10) {
-          if(11 - (digito_ver_2 % 11) > 9) {
-            if(cpf_user_int % 10 == 0) {
-              // vai pra proxima pagina
-              window.open("reclamacao.html");
-            }
-            else {
-              // errou o segundo digito verificador
-              alert("Cpf errado.");
-            }
-          }
-          else {
-            if(11 - (digito_ver_2 % 11) == cpf_user_int % 10) {
-              // vai pra proxima pagina
-              window.open("reclamacao.html");
-            }
-            else {
-              // errou o segundo digito verificador
-              alert("Cpf errado.");
-            }
-          }
-        }
-        else {
-          // errou o primeiro digito verificador
-          alert("Cpf errado.");
-        }
-      }
-    }
-
-    function admin() {
-      // declaracao das variaveis que peguei no formulario do administrador
-      var nome_administrador = document.getElementById("login_admin").value;
-      var senha_administrador = document.getElementById("senha_admin").value;
-
-      // aqui eu verifico se o que o administrador preencheu corresponde com o login e a senha corretos
-      if(nome_administrador != "Administrador" || senha_administrador != 175) {
-        alert("Login ou senha inválido(s)");
-      }
-      else {
-        // vai pra proxima pagina
-        window.open("");
-      }
-    }
-  </script>
 <head>
 <body>
-  <header>
-    <img src="css/imagens/Brasao_Ufal.png" width="5%" height="80%">
-    <h1>Ouvidoria Geral da UFAL<h1>
-  </header>
+    <header>
+        <img src="css/imagens/Brasao_Ufal.png" width="5%" height="80%">
+        <h1>Ouvidoria Geral da UFAL<h1>
+    </header>
 
-  <div id="usuario">
-    <forms name = "primeiro">
-      <h3>Usuário</h3><p>
-      Nome Completo:<br>
-      <input type = "text" id = "nome_usuario" required><p>
-      
-      Matrícula:<br>
-      <input type = "text" id = "matricula" maxlength="8" required><p>
-      
-      Digite seu CPF:<br>
-      <input type = "text" id = "cpf" maxlength="11" required><br>
-      
-      <input type = "submit" value = "Login" onclick = "user()"><p>
-    </forms>
-  </div>
+    <div id="usuario">
+        <forms name = "primeiro">
+        <h3>Usuário</h3><p>
+        Nome Completo:<br>
+        <input type = "text" id = "nome_usuario" required><p>
+          
+          Matrícula:<br>
+          <input type = "text" id = "matricula" maxlength="8" required><p>
+          
+          Digite seu CPF:<br>
+          <input type = "text" id = "cpf" maxlength="11" required><br>
+          
+          <input type = "submit" value = "Login" onclick = "user()"><p>
+        </forms>
+    </div>
 
-  <div id="administrador">
-    <forms name = "segundo">
-      <h3>Administrador</h3><p>
-      Login:<br>
-      <input type = "text" id = "login_admin" required><p>
-      
-      Senha:<br>
-      <input type = "password" id = "senha_admin" required><br>
-      
-      <input type = "submit" value = "Login" onclick = "admin()"><p>
-    </forms>
-  </div>
+    <div id="administrador">
+        <forms name = "segundo">
+            <h3>Administrador</h3><p>
+             Login:<br>
+             <input type = "text" id = "login_admin" required><p>
+              
+             Senha:<br>
+             <input type = "password" id = "senha_admin" required><br>
+              
+             <input type = "submit" value = "Login" onclick = "admin()"><p>
+        </forms>
+    </div>
 
 </body>
 </html>
