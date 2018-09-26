@@ -1,24 +1,36 @@
-// var bloco_selecionado = window.localStorage.getItem();
-// var tipo_selecionado = window.localStorage.getItem();
+var teste = [];
 
-// var key = `${bloco_selecionado}/${tipo_selecionado}`;
-// var conteudo = readFile(key) || [];
+function get_reclamation(bloco, tipo){
+	var tipo_selecionado = get_option(tipo);
+	var bloco_selecionado = get_option(bloco);
 
-// var entrada = window.localStorage.getItem(key);
-// var content = JSON.parse(entrada)
+	var key = `${bloco_selecionado}/${tipo_selecionado}`;
+	var conteudo = readFile(key) || [];
 
-// var entrada = window.localStorage.getItem(key);
-// var content = JSON.parse(entrada);
+	teste = conteudo;
+/*
+	for (i = 0, len = cars.length, text = ""; i < len; i++) { 
+    	text += cars[i] + "<br>";
+	}
+*/
+	
+	var resultado = '<table>' +
+					  '<tr>' + 
+					    '<th>Nome</th>' +
+					    '<th>Matricula</th> ' +
+					    '<th>CPF</th>' +
+					    '<th>Reclamação</th>' +
+					  '</tr>';
 
-var keys = Object.keys(localStorage);
-var values = [];
-var j = 1;
-
-values.push(localStorage.getItem(keys[j]));
-
-var dados;
-dados = Object.values(values);
-
-console.log(dados);
-
-console.log(values);
+	conteudo.forEach(function (item){
+		resultado += '<tr>' + 
+    					`<td>${item.nome}</td>` +
+    					`<td>${item.matricula}</td>` +
+    					`<td>${item.cpf}</td>` +
+    					`<td>${item.reclamacao}</td>` +
+  					'</tr>';
+	});
+	resultado += '</table>';
+	
+	document.getElementById("result").innerHTML = resultado;
+}

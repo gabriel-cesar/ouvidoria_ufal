@@ -2,7 +2,9 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/estilos_reclamacao.css">
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+
+	<script type="text/javascript" src="javascript/utils.js"></script>
 	<script type="text/javascript" src="javascript/banco_de_dados.js"></script>
 	<script type="text/javascript" src="javascript/admin.js"></script>
 
@@ -59,7 +61,9 @@
 			</select>
 		</p>
 	
-		<input type='button' name='botao' value='Visualizar reclamações' onClick='show_reclamations()'>
+		<input type='button' name='botao' value='Visualizar reclamações' onClick='get_reclamation("cBloco", "cTipo")'>
+		
+		<div id="result"></div>
 	
 	</form>
 </body>

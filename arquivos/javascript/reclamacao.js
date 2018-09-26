@@ -8,6 +8,12 @@ var dados = readFile(cpf);
 var nome = dados.nome;
 var matricula = dados.matricula;
 // console.log(nome, matricula, cpf);
+function get_option(name){
+	var select = document.getElementById(name);
+
+	//Buscando a opção do select
+	return select.options[select.selectedIndex].value;
+}
 
 function criar_reclamacao(tipo, bloco, texto){
 	var tipo_selecionado = get_option(tipo);
@@ -31,11 +37,4 @@ function criar_reclamacao(tipo, bloco, texto){
 	writeFile(key, conteudo);
 
 	alert("Reclamação enviada!");
-}
-
-function get_option(name){
-	var select = document.getElementById(name);
-
-	//Buscando a opção do select
-	return select.options[select.selectedIndex].value;
 }
