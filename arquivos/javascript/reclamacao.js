@@ -1,13 +1,13 @@
 var url_string = window.location.href;
 var url = new URL(url_string);
-	
+
 var cpf = url.searchParams.get("cpf");
 
 var dados = readFile(cpf);
 
 var nome = dados.nome;
 var matricula = dados.matricula;
-console.log(nome, matricula, cpf);
+// console.log(nome, matricula, cpf);
 
 function criar_reclamacao(tipo, bloco, texto){
 	var tipo_selecionado = get_option(tipo);

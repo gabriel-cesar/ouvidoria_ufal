@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/estilos_reclamacao.css">
 	<script type="text/javascript" src="javascript/banco_de_dados.js"></script>
 	<script type="text/javascript" src="javascript/admin.js"></script>
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<form>
-		<p><label for='cBloco'>Selecione o bloco que você deseja fazer a reclamação:<br></label>
+		<p><label for='cBloco'>Selecione o bloco que você deseja ver as reclamações:<br></label>
 			<select name='tBloco' id='cBloco'>
 				<OPTION selected>--CLIQUE PARA VISUALIZAR OS BLOCOS--</option>
 				<OPTION value = "bloco1">BIBLIOTECA CENTRAL</option>
@@ -48,7 +49,7 @@
 				<OPTION value = "bloco33">RESTAURANTE UNIVERSITÁRIO</OPTION>
 			</select>
 		</p>	
-		<p><label for='cTipo'>Selecione o tipo de reclamação que você deseja fazer:<br></label>
+		<p><label for='cTipo'>Selecione o tipo de reclamação que você deseja ver:<br></label>
 			<select name='tTipo' id='cTipo'>
 				<option selected>--CLIQUE PARA VISUALIZAR OS TIPOS--</option>
 				<option value = "recTipo1">FUNCIONÁRIOS</option>
@@ -58,7 +59,7 @@
 			</select>
 		</p>
 	
-		<input type='button' name='botao' value='Visualizar reclamações' onClick=''>
+		<input type='button' name='botao' value='Visualizar reclamações' onClick='show_reclamations()'>
 	
 	</form>
 </body>
