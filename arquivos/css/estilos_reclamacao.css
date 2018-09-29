@@ -5,12 +5,17 @@ html{
 }
 
 body {
-	width:560px;
+	width:650px;
+	height: 500px;
 	border:1px solid #ddd;
 	margin:10px auto;
 	background-color:#FFF;
 	padding:10px 30px;
 	border-radius:5px;
+}
+
+h1 {
+	text-align: center;
 }
 
 input {
@@ -29,4 +34,9 @@ input[type=button] {
 	background:-moz-linear-gradient(top, #F33, #933 );
 	border:1px solid #333;
 	cursor:pointer;
+}
+
+footer {
+	margin-top: 400px;
+	text-align: center;	
 }

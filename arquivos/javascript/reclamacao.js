@@ -7,7 +7,9 @@ var dados = readFile(cpf);
 
 var nome = dados.nome;
 var matricula = dados.matricula;
+
 // console.log(nome, matricula, cpf);
+
 function get_option(name){
 	var select = document.getElementById(name);
 
@@ -36,5 +38,6 @@ function criar_reclamacao(tipo, bloco, texto){
 
 	writeFile(key, conteudo);
 
-	alert("Reclamação enviada!");
+	window.open(`reclamacao2.html`, "_self");
+	// alert("Reclamação enviada!");
 }

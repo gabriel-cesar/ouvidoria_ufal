@@ -8,8 +8,8 @@ function get_reclamation(bloco, tipo){
 	var conteudo = readFile(key) || [];
 
 	teste = conteudo;
-/*
-	for (i = 0, len = cars.length, text = ""; i < len; i++) { 
+
+/*	for (i = 0, len = cars.length, text = ""; i < len; i++) { 
     	text += cars[i] + "<br>";
 	}
 */
